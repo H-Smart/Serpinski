@@ -1,4 +1,6 @@
-#include <stdio.h>
+extern "C" {
+    #include <stdlib.h>
+}
 #include <GLUT/glut.h>
 
 void myinit();
@@ -30,7 +32,6 @@ void display()
 {
     GLfloat vertices[3][2] = {{0.0,0.0},{25.0,50.0},{50.0,0.0}};
     int i, j, k;
-    int rand();
     GLfloat p[2] = {7.5, 5.0};
 
 
@@ -39,7 +40,7 @@ void display()
 
     glBegin(GL_POINTS);
 
-    for( k=0; k<5000; k++)
+    for( k=0; k<20000; k++)
     {
         j=rand()%3;
 
