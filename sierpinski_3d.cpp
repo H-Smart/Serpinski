@@ -2,10 +2,17 @@ extern "C" {
     #include <stdlib.h>
     #include <stdio.h>
     #include <string.h>
+    #include <math.h>
 }
 #include <GLUT/glut.h>
 
-GLfloat v[4][3] = {{-50.0, -50.0, 0.0},{50.0, -50.0, 0.0},{0.0, -25.0, 25.0},{0.0, 50.0, 0.0}};
+#define CIRCUMRADIUS 50.0
+#define SIDE_LENGTH CIRCUMRADIUS*sqrt(3)
+#define Y_OFFSET 10.0
+
+GLfloat v[4][3] = {{-SIDE_LENGTH/2.0, -CIRCUMRADIUS/2.0 - Y_OFFSET, 0.0},
+    {0.0, CIRCUMRADIUS - Y_OFFSET, 0.0},{+SIDE_LENGTH/2.0, -CIRCUMRADIUS/2.0 - Y_OFFSET, 0.0},
+    {0.0, 0.0 - Y_OFFSET, CIRCUMRADIUS}};
 int n = 3;
 
 const GLfloat colors[4][3] = {{1.0,0.0,0.0}, {0.0,1.0,0.0}, {0.0,0.0,1.0}, {0.0,0.0,0.0}};
