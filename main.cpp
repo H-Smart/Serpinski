@@ -15,6 +15,7 @@ const char *program_names_cli[] = {"serpp", "serpt", "triangle"};
 
 GLfloat v[3][2] = {{0.0,0.0},{25.0,50.0},{50.0,0.0}};
 int n = 5;
+GLfloat vertices_3d[4][3] = {{0.0,0.0,0.0},{25.0,50.0,10.0},{50.0,25.0,25.0},{25.0,10.0,25.0}};
 
 int process_input(int argc, char* argv[]);
 void myinit();
@@ -69,6 +70,7 @@ int process_input(int argc, char* argv[]){
     printf("Invalid argument.\n");
     return 0;
 }
+
 void myinit()
 {
     glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -118,6 +120,12 @@ void display_serpinski_triangle(){
         divide_triangle(v[0], v[1], v[2], n);
     glEnd();
     glFlush();
+}
+void display_sierpinski_points_3d(){
+    int i,j;
+    j=rand()%4;
+
+    p[0] = (p[0] + vertices_3d[j][0])/2.0;
 }
 void triangle(GLfloat *a, GLfloat *b, GLfloat *c)
 {
