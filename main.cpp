@@ -121,12 +121,6 @@ void display_serpinski_triangle(){
     glEnd();
     glFlush();
 }
-void display_sierpinski_points_3d(){
-    int i,j;
-    j=rand()%4;
-
-    p[0] = (p[0] + vertices_3d[j][0])/2.0;
-}
 void triangle(GLfloat *a, GLfloat *b, GLfloat *c)
 {
     glVertex2fv(a);
