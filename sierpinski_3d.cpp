@@ -52,7 +52,7 @@ void divide_tetra(GLfloat *a, GLfloat *b, GLfloat *c, GLfloat *d, int m)
 		divide_tetra(a, mid[0], mid[1], mid[2], m-1);
 		divide_tetra(mid[0], b, mid[3], mid[5], m-1);
 		divide_tetra(mid[1], mid[3], c, mid[4], m-1);
-		divide_tetra(mid[2], mid[4], d, mid[5], m-1);
+		divide_tetra(mid[2], mid[5], mid[4], d, m-1);
 
 	}
 	else(tetra(a,b,c,d)); 
@@ -62,7 +62,7 @@ void display_3d_point()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glBegin(GL_TRIANGLES);
-	    divide_tetra(v[0], v[1], v[2], v[3], n);
+	    divide_tetra(v[0], v[1], v[2], v[3],n);
 	glEnd();
 	glFlush();
 }
