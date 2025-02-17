@@ -1,7 +1,6 @@
 extern "C" {
     #include <stdlib.h>
     #include <stdio.h>
-    #include <string.h>
     #include <math.h>
 }
 #include <GLUT/glut.h>
@@ -62,10 +61,6 @@ void divide_triangle(GLfloat *a, GLfloat *b, GLfloat *c, int k)
         for(j=0; j<2; j++) ab[j] = (a[j]+b[j])/2 + pow(2,k)*PERTURBATION_MAG*((rand()%20 - 10)/20.0);
         for(j=0; j<2; j++) ac[j] = (a[j]+c[j])/2 + pow(2,k)*PERTURBATION_MAG*((rand()%20 - 10)/20.0);
         for(j=0; j<2; j++) bc[j] = (b[j]+c[j])/2 + pow(2,k)*PERTURBATION_MAG*((rand()%20 - 10)/20.0);
-
-        // perturb_point_2d(ab);
-        // perturb_point_2d(ac);
-        // perturb_point_2d(bc);
 
         // subdivide all but inner triangle
         divide_triangle(a, ab, ac, k-1);
