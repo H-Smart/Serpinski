@@ -7,13 +7,15 @@ SRC_MOUNT = fractal_mountains_2d.cpp
 SRC_TURT = turtle.cpp
 SRC_SIERP_3D = sierpinski_3d.cpp
 SRC_TURT_SIERP_2D = turtle_sierpinski_2d.cpp
+SRC_KOCH = koch.cpp
 # Output executables
 OUT_MOUNT = fm
 OUT_TURT = turt
 OUT_SIERP_3D = sp_3d
 OUT_TURT_SIERP_2D = turt_sp_2d
+OUT_KOCH = koch
 # Default target
-all: $(OUT_MOUNT) $(OUT_TURT) $(OUT_SIERP_3D) $(OUT_TURT_SIERP_2D) 
+all: $(OUT_MOUNT) $(OUT_TURT) $(OUT_SIERP_3D) $(OUT_TURT_SIERP_2D) $(OUT_KOCH)
 
 # Compile the program
 $(OUT_MOUNT): $(SRC_MOUNT)
@@ -27,6 +29,9 @@ $(OUT_SIERP_3D): $(SRC_SIERP_3D)
 
 $(OUT_TURT_SIERP_2D): $(SRC_TURT_SIERP_2D)
 	$(CXX) $(XFLAGS) $(SRC_TURT_SIERP_2D) -o $(OUT_TURT_SIERP_2D)
+
+$(OUT_KOCH): $(SRC_KOCH)
+	$(CXX) $(XFLAGS) $(SRC_KOCH) -o $(OUT_KOCH)
 # Clean build files
 clean:
-	rm -f  $(OUT_MOUNT) $(OUT_TURT) $(OUT_SIERP_3D) $(OUT_TURT_SIERP_2D) 
+	rm -f  $(OUT_MOUNT) $(OUT_TURT) $(OUT_SIERP_3D) $(OUT_TURT_SIERP_2D) $(OUT_KOCH)
